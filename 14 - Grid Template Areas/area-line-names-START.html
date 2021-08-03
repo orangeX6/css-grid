@@ -12,7 +12,7 @@
   <div class="container">
     <div class="item item1">1</div>
     <div class="item item2">2</div>
-    <div class="item item3">3</div>
+    <div class="item item3">3333</div>
     <div class="item item4">4</div>
     <div class="item item5">5</div>
     <div class="item item6">6</div>
@@ -46,6 +46,25 @@
     .container {
       display: grid;
       grid-gap: 20px;
+      grid-template-areas: "💩 💩 💩 💩 👽 👽 👽 👽"
+        "💩 💩 💩 💩 👽 👽 👽 👽"
+        "💩 💩 💩 💩 👽 👽 👽 👽"
+        "💩 💩 💩 💩 👽 👽 👽 👽"
+    }
+
+    .item9 {
+      grid-area: 💩;
+      background: none;
+    }
+
+    .item3 {
+      grid-area: 💩;
+    }
+
+    .item19 {
+      grid-column: 💩-start/ 👽-end;
+      grid-row-end: 👽-end;
+      grid-row-start: 👽-start;
     }
   </style>
 </body>

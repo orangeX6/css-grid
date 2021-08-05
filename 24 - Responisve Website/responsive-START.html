@@ -85,7 +85,6 @@
       </div>
     </section>
 
-
     <section class="gallery">
       <h2>Instant Grams</h2>
       <img src="https://source.unsplash.com/random/201x201" alt="">
@@ -102,8 +101,19 @@
   </div>
 
   <script>
+    const navButton = document.querySelector('button[aria-expanded]');
+
+    function toggleNav({
+      target
+    }) {
+      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+      console.log(expanded);
+      navButton.setAttribute('aria-expanded', !expanded);
+    }
+
+    navButton.addEventListener('click', toggleNav);
   </script>
-  
+
 </body>
 
 </html>

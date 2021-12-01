@@ -14,22 +14,21 @@ img {
 }
 
 /* Wrapper */
-.wrapper{
+.wrapper {
   display: grid;
   grid-gap: 20px;
 }
 
-
 /* TOP */
-.top{
+.top {
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
-  "hero hero cta1"
-  "hero hero cta2";
+    "hero hero cta1"
+    "hero hero cta2";
 }
 
-.hero{
+.hero {
   grid-area: hero;
   min-height: 400px;
   background: white url(images/taco.jpg);
@@ -50,42 +49,39 @@ img {
 /* .hero > p{
   background: var(--yellow);
   /* display: block; */
-  /* content: ''; */
-  /* width: 57%;
+/* content: ''; */
+/* width: 57%;
   left: 3px;
   top:10px;
 }*/
 
-
-.cta{
+.cta {
   background: var(--yellow);
   display: grid;
   align-items: center;
   justify-items: center;
   align-content: center;
   /* justify-content: center; */
-
 }
 
-.cta p{
+.cta p {
   margin: 0px;
 }
 
-.cta1{
+.cta1 {
   grid-area: cta1;
 }
 
-.cta2{
+.cta2 {
   grid-area: cta2;
 }
 
-.price{
+.price {
   font-size: 60px;
   font-weight: 300;
 }
 
-
-.menu ul{
+.menu ul {
   display: grid;
   grid-gap: 10px;
   padding: 0;
@@ -94,7 +90,7 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
-.menu a{
+.menu a {
   background: var(--yellow);
   display: block;
   text-decoration: none;
@@ -105,38 +101,37 @@ img {
   font-size: 20px;
 }
 
-[aria-controls = "menu-list"]{
+[aria-controls="menu-list"] {
   display: none;
 }
 
-
 /* Features */
-.features{
+.features {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.feature{
+.feature {
   background: white;
   padding: 10px;
   border: 1px solid white;
   text-align: center;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
-.feature .icon{
+.feature .icon {
   font-size: 50px;
 }
 
-.feature p{
-  color: rgba(0,0,0,0.5);
+.feature p {
+  color: rgba(0, 0, 0, 0.5);
 }
 
-.about{
+.about {
   display: grid;
   background: white;
-  padding:50px;
+  padding: 50px;
   grid-template-columns: 400px 1fr;
   align-items: center;
 }
@@ -144,94 +139,95 @@ img {
 /* Gallery */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 5px;
 }
 
-.gallery img{
+.gallery img {
   width: 100%;
 }
 
-.gallery h2{
+.gallery h2 {
   display: grid;
-  grid-column:1/-1;
+  grid-column: 1/-1;
   grid-template-columns: 1fr auto 1fr;
   grid-gap: 20px;
   align-items: center;
 }
 
-.gallery h2::before, .gallery h2::after{
+.gallery h2::before,
+.gallery h2::after {
   display: block;
-  content: '';
-  background: linear-gradient(to var(--direction, left), var(--yellow), transparent);
+  content: "";
+  background: linear-gradient(
+    to var(--direction, left),
+    var(--yellow),
+    transparent
+  );
   height: 10px;
 }
 
 .gallery h2::after {
-    --direction:right;
+  --direction: right;
 }
 
-@media(max-width:1000px){
-
+@media (max-width: 1000px) {
   /* MENU */
-  .menu{
+  .menu {
     order: -1;
     perspective: 800px;
   }
 
-  .menu ul{
+  .menu ul {
     max-height: 0;
     overflow: hidden;
     transform: rotateX(90deg);
-    transition:all 0.5s;
+    transition: all 0.5s;
   }
 
-  [aria-controls="menu-list"]{
+  [aria-controls="menu-list"] {
     display: block;
     margin-bottom: 10px;
   }
 
-  [aria-expanded="true"] ~ ul{
+  [aria-expanded="true"] ~ ul {
     display: grid;
     max-height: 500px;
     transform: rotateX(0);
   }
 
-  [aria-expanded="false"] .close{
+  [aria-expanded="false"] .close {
     display: none;
     max-height: 0;
   }
 
-  [aria-expanded="true"] .close{
+  [aria-expanded="true"] .close {
     display: inline-block;
   }
-  
-  [aria-expanded="true"] .open{
+
+  [aria-expanded="true"] .open {
     display: none;
   }
-
 }
 
-
-@media(max-width:700px){
-  .top{
-    grid-template-areas: 
-    "hero hero"
-    "cta1 cta2";
+@media (max-width: 700px) {
+  .top {
+    grid-template-areas:
+      "hero hero"
+      "cta1 cta2";
   }
 
   /* About */
-  .about{
+  .about {
     grid-template-columns: 1fr;
   }
 }
 
-
-@media(max-width:500px){
-  .top{
-    grid-template-areas: 
-    "hero"
-    "cta1"
-    "cta2";
+@media (max-width: 500px) {
+  .top {
+    grid-template-areas:
+      "hero"
+      "cta1"
+      "cta2";
   }
 }
